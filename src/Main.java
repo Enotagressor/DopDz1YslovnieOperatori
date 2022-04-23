@@ -53,8 +53,8 @@ public class Main {
     //Написанный код отрабатывает условия задачи и изменение значений переменных, выводит в консоль корректный результат
     //Нет вложенности в коде.
     public static void  task7() {
-        int age = 25;
-        int salary = 60_000;
+        int age = 31;
+        int salary = 70_000;
         double wantedSum = 330_000;
 
         double stavka = 0.1;
@@ -73,6 +73,9 @@ public class Main {
         }
         else if (age < 30){
             wantedSum = wantedSum + (wantedSum * (stavka + koefHight2));
+        }
+        else if (age > 30) {
+            wantedSum = wantedSum + (wantedSum * stavka);
         }
 
         if (salary > 80_000) {
