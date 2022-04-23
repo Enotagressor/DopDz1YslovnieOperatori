@@ -3,5 +3,6 @@ public class Main {
         task6();
     }
     public static void  task6(){
+
     }
 }
