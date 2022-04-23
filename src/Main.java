@@ -54,8 +54,8 @@ public class Main {
     //Нет вложенности в коде.
 
     public static void  task7() {
-        int age = 40;
-        int salary = 90_000;
+        int age = 25;
+        int salary = 60_000;
         double wantedSum = 330_000;
 
         double stavka = 0.1;
