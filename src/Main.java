@@ -52,9 +52,10 @@ public class Main {
     //При изменении значения переменной salary результат вывода в консоль изменяется согласно условиям задачи
     //Написанный код отрабатывает условия задачи и изменение значений переменных, выводит в консоль корректный результат
     //Нет вложенности в коде.
+
     public static void  task7() {
-        int age = 31;
-        int salary = 70_000;
+        int age = 40;
+        int salary = 90_000;
         double wantedSum = 330_000;
 
         double stavka = 0.1;
@@ -64,35 +65,24 @@ public class Main {
         double koefHight2 = 0.005;
         double koevLow = 0.007;
 
-
-        if (age < 18) {
-            System.out.println("Подрости");
-        }
-        else if (age < 23){
-            wantedSum  = wantedSum + (wantedSum * (stavka + koefHight1));
-        }
-        else if (age < 30){
-            wantedSum = wantedSum + (wantedSum * (stavka + koefHight2));
-        }
-        else if (age > 30) {
-            wantedSum = wantedSum + (wantedSum * stavka);
-        }
-
         if (salary > 80_000) {
-            wantedSum = wantedSum -(wantedSum * koevLow);
-        }
+            stavka = stavka - koevLow;
 
-        double everMonthPay = wantedSum / srok;
+            if (age < 18) {
+                System.out.println("Подрости");
+            } else if (age < 23) {
+                stavka = stavka + koefHight1;
+            } else if (age < 30) {
+                stavka = stavka + koefHight2;
+            }
+        }
+        double dolgBanku = wantedSum + (wantedSum * stavka);
+        double everMonthPay = dolgBanku / srok;
 
         if (everMonthPay >= maxMonthPayment) {
-            System.out.println("Максимальный платеж при ЗП " + salary + " равен " + maxMonthPayment +  " рублей. Платеж по кредиту " + everMonthPay +" рублей. Отказано");
+            System.out.println("Максимальный платеж при ЗП " + salary + " равен " + maxMonthPayment + " рублей. Платеж по кредиту " + everMonthPay + " рублей. Отказано");
+        } else {
+            System.out.println("Максимальный платеж при ЗП " + salary + " равен " + maxMonthPayment + " рублей. Платеж по кредиту " + everMonthPay + " рублей. Одобрено");
         }
-        else {
-            System.out.println("Максимальный платеж при ЗП " + salary + " равен " + maxMonthPayment +  " рублей. Платеж по кредиту " + everMonthPay +" рублей. Одобрено");
         }
-
-
-
-
     }
-}
